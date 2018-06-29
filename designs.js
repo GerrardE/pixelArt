@@ -1,10 +1,8 @@
 //define variables
 //get the document ready
 // Select size input
-
 // When size is submitted by the user, call makeGrid()
-
- //Your code goes here!
+//Your code goes here!
 $(document).ready(function(){
 	$('#sizePicker').submit(function makeGrid(e){
 		//prevent the form from continuosly submitting
@@ -29,7 +27,11 @@ $(document).ready(function(){
 					//collect the color value selection
 					var paint = $('#colorPicker').val();
 					//color the target cell
-					$(color.target).css('background-color', paint);
+					if ($(this).attr('style')){	
+						$(this).removeAttr('style');
+							} else {
+								$(color.target).css('background-color', paint);	
+						}
 				});		
 		});
 });
